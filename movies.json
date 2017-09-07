@@ -1,0 +1,34 @@
+[
+
+    {
+        "name": "It",
+        "length": "135 min",
+        "genre": ["Drama", "Horror"],
+        "director": "Andy Muschietti"
+
+    },
+
+    {
+        "name": "Home again",
+        "length": "97 min",
+        "genre": ["Comedy", "Drama", "Romance"],
+        "director": "Hallie Meyers-Sheyer",
+
+    },
+
+    {
+        "name": "Rememory",
+        "length": "111 min",
+        "genre": ["Drama", "Mystery", "Sci-Fi"],
+        "director": "Andy Muschietti",
+
+    },
+
+    {
+        "name": "The Good Catholic",
+        "length": "96 min",
+        "genre": ["Comedy", "Drama"],
+        "director": "Paul Shoulberg",
+
+    }
+]
