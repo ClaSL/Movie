@@ -1,20 +1,82 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>JSON MOVIE</title>
+
 </head>
 
 <body>
 
+    <section>
 
 
-   <script>
+    </section>
 
 
+
+    <template class="movieItem">
+
+			<article class="dish">
+
+
+				<h1>Name</h1>
+				<h2>Length</h2>
+				<h3>Genre</h3>
+                <h4>Director</h4>
+
+				</article>
+		</template>
+
+
+
+
+    <script>
+        let movielist = "movies.json";
+        //The movielist is the json-file
+        let template = document.querySelector(".movieItem").content;
+        //The template is the Html element with the class movieItem and all its CONTENT
+        let section = document.querySelector("section");
+        //The section is the HTML element section
+
+
+
+        function getData(link) {
+             //Function GetData says, whatever link you get, do the following thing:
+            fetch(link).then(function(response) {
+                return response.json();
+            }).then(function(json) {
+                return show(json);
+            });
+        }
+
+        function show(json) {
+            json.forEach(function(movie) {
+        //Function show..
+                console.log(movie.name);
+                //show all the movieNames. NAME comes from the json file
+                let clone = template.cloneNode(true);
+                //
+                clone.querySelector('h1').textContent = movie.name;
+                //In the clone insert in h1 the text content NAME from the json file
+                clone.querySelector('h2').textContent = movie.length;
+                clone.querySelector('h3').textContent = movie.genre;
+                clone.querySelector('h4').textContent = movie.director;
+
+                section.appendChild(clone);
+                //add the clone in the section
+            });
+
+
+        }
+
+        getData(movielist);
 
     </script>
 
 </body>
+
 </html>
